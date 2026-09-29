@@ -1046,3 +1046,21 @@ img {
     font-size: 0.8rem;
   }
 }
+
+.nav-cv {
+  padding: 8px 18px;
+  border: 1px solid #d9d9d9;
+  border-radius: 40px;
+  font-size: 0.9rem !important;
+  transition: all 0.25s ease;
+}
+
+.nav-cv:hover {
+  border-color: #0b0b0b;
+  background: #0b0b0b;
+  color: #fff !important;
+}
+
+.nav-cv::after {
+  display: none; 
+}

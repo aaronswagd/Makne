@@ -346,22 +346,47 @@
     }
 
     /* RESPONSIVE */
-    @media (max-width: 860px) {
-      .cv-page { padding: 120px 0 0; }
-      .cv-section {
-        grid-template-columns: 1fr;
-        gap: 24px;
-        margin-bottom: 70px;
-      }
-      .cv-section-title { padding-top: 0; }
-      .cv-projects,
-      .cv-skills { grid-template-columns: 1fr; }
-      .cv-langs {
-        grid-template-columns: 1fr;
-        max-width: 100%;
-      }
-      .cv-header { margin-bottom: 70px; }
-    }
+   /* CTA — más aire en móvil */
+@media (max-width: 768px) {
+  .cv-page .cs-final-cta {
+    padding: 40px 8px 0;
+  }
+
+  .cv-page .cs-final-title {
+    font-size: 1.75rem;
+    line-height: 1.15;
+    padding: 0 4px;
+  }
+
+  .cv-page .cs-final-sub {
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 0 4px;
+    margin-bottom: 32px;
+  }
+
+  .cv-page .cs-cta-group {
+    gap: 10px;
+    padding: 0 4px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .cv-page .cs-btn-primary,
+  .cv-page .cs-btn-secondary {
+    padding: 14px 24px;
+    font-size: 0.9rem;
+    width: auto;
+    flex: 0 0 auto;
+  }
+
+  .cv-page .contact-email {
+    font-size: 0.9rem;
+    padding: 0 4px;
+    line-height: 1.5;
+    word-break: break-word;
+  }
+}
 
     /* PRINT */
     @media print {

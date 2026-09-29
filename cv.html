@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>CV | Makné — M. García</title>
+  <meta name="description" content="M. García — Graphic Designer & Front-End Developer. Branding, editorial, UI/UX, and code.">
+
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/case-study.css">
+
+  <style>
+    /* ===== CV PAGE ===== */
+    .cv-page {
+      padding: 140px 0 0;
+    }
+
+    .cv-header {
+      margin-bottom: 100px;
+    }
+
+    .cv-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.6rem, 7vw, 4.6rem);
+      font-weight: 700;
+      letter-spacing: -0.045em;
+      line-height: 1;
+      margin-bottom: 20px;
+      color: #0b0b0b;
+    }
+
+    .cv-role {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+      font-weight: 400;
+      color: #6e6e73;
+      margin-bottom: 32px;
+      letter-spacing: -0.015em;
+      line-height: 1.4;
+    }
+
+    .cv-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 24px;
+      font-size: 0.95rem;
+      color: #6e6e73;
+      margin-bottom: 40px;
+    }
+
+    .cv-contact a {
+      color: #0b0b0b;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .cv-contact a:hover {
+      border-bottom-color: #0b0b0b;
+    }
+
+    /* BUTTONS */
+    .cv-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .cv-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 15px 30px;
+      border-radius: 40px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      border: 1px solid transparent;
+      letter-spacing: -0.01em;
+      line-height: 1;
+      background: transparent;
+      color: #0b0b0b;
+    }
+
+    .cv-btn--primary {
+      background: #0b0b0b;
+      color: #fff;
+      border-color: #0b0b0b;
+    }
+
+    .cv-btn--primary:hover {
+      background: #2c2c2c;
+      border-color: #2c2c2c;
+      transform: scale(1.03);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .cv-btn--ghost {
+      border-color: #d9d9d9;
+    }
+
+    .cv-btn--ghost:hover {
+      border-color: #0b0b0b;
+      transform: scale(1.03);
+    }
+
+    /* SECTIONS */
+    .cv-section {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 60px;
+      margin-bottom: 100px;
+      align-items: start;
+    }
+
+    .cv-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .cv-section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #86868b;
+      margin: 0;
+      padding-top: 6px;
+      line-height: 1.4;
+    }
+
+    /* SUMMARY */
+    .cv-summary {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+      line-height: 1.65;
+      color: #2c2c2c;
+      letter-spacing: -0.01em;
+      max-width: 720px;
+    }
+
+    /* ROWS */
+    .cv-row {
+      padding: 32px 0;
+      border-top: 1px solid #eaeaea;
+    }
+
+    .cv-row:last-child {
+      border-bottom: 1px solid #eaeaea;
+    }
+
+    .cv-row-role {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #0b0b0b;
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .cv-row-company {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      color: #6e6e73;
+      margin-bottom: 16px;
+    }
+
+    .cv-row-meta {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #86868b;
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+    }
+
+    .cv-row ul {
+      list-style: none;
+    }
+
+    .cv-row li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 9px;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #3a3a3a;
+      letter-spacing: -0.005em;
+    }
+
+    .cv-row li:last-child {
+      margin-bottom: 0;
+    }
+
+    .cv-row li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.72em;
+      width: 6px;
+      height: 6px;
+      background: #d2d2d7;
+      border-radius: 50%;
+    }
+
+    /* PROJECTS */
+    .cv-projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .cv-project {
+      padding: 30px 28px;
+      background: #fafafa;
+      border-radius: 24px;
+      transition: all 0.3s ease;
+    }
+
+    .cv-project:hover {
+      background: #f5f5f7;
+      transform: translateY(-3px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+    }
+
+    .cv-project-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #86868b;
+      display: block;
+      margin-bottom: 14px;
+    }
+
+    .cv-project h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.12rem;
+      font-weight: 600;
+      color: #0b0b0b;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+    }
+
+    .cv-project p {
+      font-size: 0.94rem;
+      line-height: 1.55;
+      color: #6e6e73;
+      letter-spacing: -0.005em;
+    }
+
+    /* SKILLS */
+    .cv-skills {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .cv-skill {
+      padding: 26px 28px;
+      background: #fafafa;
+      border-radius: 24px;
+      transition: background 0.3s ease;
+    }
+
+    .cv-skill:hover {
+      background: #f5f5f7;
+    }
+
+    .cv-skill h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #0b0b0b;
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+    }
+
+    .cv-skill p {
+      font-size: 0.92rem;
+      line-height: 1.55;
+      color: #6e6e73;
+      letter-spacing: -0.005em;
+    }
+
+    /* TOOLS */
+    .cv-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .cv-tag {
+      padding: 10px 20px;
+      border-radius: 40px;
+      background: #f5f5f7;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #1d1d1f;
+      letter-spacing: -0.005em;
+      transition: all 0.2s ease;
+    }
+
+    .cv-tag:hover {
+      background: #1d1d1f;
+      color: #fff;
+    }
+
+    /* LANGUAGES */
+    .cv-langs {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      max-width: 560px;
+    }
+
+    .cv-lang {
+      padding: 26px 28px;
+      background: #fafafa;
+      border-radius: 24px;
+    }
+
+    .cv-lang strong {
+      display: block;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #0b0b0b;
+      margin-bottom: 4px;
+      letter-spacing: -0.02em;
+    }
+
+    .cv-lang span {
+      font-size: 0.9rem;
+      color: #6e6e73;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 860px) {
+      .cv-page { padding: 120px 0 0; }
+      .cv-section {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-bottom: 70px;
+      }
+      .cv-section-title { padding-top: 0; }
+      .cv-projects,
+      .cv-skills { grid-template-columns: 1fr; }
+      .cv-langs {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+      }
+      .cv-header { margin-bottom: 70px; }
+    }
+
+    /* CTA — más aire en móvil */
+    @media (max-width: 768px) {
+      .cv-page .cs-final-cta {
+        padding: 40px 8px 0;
+      }
+
+      .cv-page .cs-final-title {
+        font-size: 1.75rem;
+        line-height: 1.15;
+        padding: 0 4px;
+      }
+
+      .cv-page .cs-final-sub {
+        font-size: 1rem;
+        line-height: 1.5;
+        padding: 0 4px;
+        margin-bottom: 32px;
+      }
+
+      .cv-page .cs-cta-group {
+        gap: 10px;
+        padding: 0 4px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .cv-page .cs-btn-primary,
+      .cv-page .cs-btn-secondary {
+        padding: 14px 24px;
+        font-size: 0.9rem;
+        width: auto;
+        flex: 0 0 auto;
+      }
+
+      .cv-page .contact-email {
+        font-size: 0.9rem;
+        padding: 0 4px;
+        line-height: 1.5;
+        word-break: break-word;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .cv-page .cs-final-title {
+        font-size: 1.55rem;
+      }
+
+      .cv-page .cs-final-sub {
+        font-size: 0.95rem;
+      }
+
+      .cv-page .cs-btn-primary,
+      .cv-page .cs-btn-secondary {
+        padding: 13px 20px;
+        font-size: 0.85rem;
+      }
+
+      .cv-page .contact-email {
+        font-size: 0.85rem;
+      }
+    }
+
+    /* ===== PRINT ===== */
+    @media print {
+      .back-link, .cv-actions, .cs-final-cta, .cs-footer { display: none !important; }
+      body { font-size: 10.5pt; }
+      .cv-page { padding: 0 !important; }
+      .container { max-width: 100%; padding: 0; }
+      .cv-header { margin-bottom: 28px; }
+      .cv-name { font-size: 22pt; }
+      .cv-section { margin-bottom: 22px; }
+      .cv-project, .cv-skill, .cv-lang {
+        background: #f7f7f7 !important;
+        padding: 14px;
+        border-radius: 0;
+      }
+      a { color: #000 !important; text-decoration: none; }
+      .cv-section, .cv-row, .cv-project { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BACK LINK -->
+  <a href="index.html" class="back-link">
+    <span class="back-arrow">←</span> Back
+  </a>
+
+  <main class="cv-page">
+
+    <!-- CV CONTENT -->
+    <div class="container">
+
+      <!-- HEADER -->
+      <header class="cv-header">
+        <h1 class="cv-name">M. García</h1>
+        <p class="cv-role">Graphic Designer &amp; Front-End Developer</p>
+        <div class="cv-contact">
+          <span>Ciudad Juárez, Chihuahua, México</span>
+        </div>
+        <div class="cv-actions">
+          <a href="cv/M_Garcia_CV.pdf" download class="cv-btn cv-btn--primary">Download PDF</a>
+          <button onclick="window.print()" class="cv-btn cv-btn--ghost">Print</button>
+        </div>
+      </header>
+
+      <!-- PROFILE -->
+      <section class="cv-section">
+        <h2 class="cv-section-title">Profile</h2>
+        <p class="cv-summary">
+          Graphic designer and front-end developer with over 4 years of experience in branding, editorial, and digital projects. I combine design and code to create complete visual solutions, from brand identity to web implementation. Strongly influenced by the Bauhaus aesthetic. I manage projects from start to finish with attention to detail and effective communication.
+        </p>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section class="cv-section">
+        <h2 class="cv-section-title">Experience</h2>
+        <div>
+          <div class="cv-row">
+            <div class="cv-row-meta">2021 — Present</div>
+            <h3 class="cv-row-role">Graphic Designer &amp; Front-End Developer</h3>
+            <p class="cv-row-company">Freelance</p>
+            <ul>
+              <li>Develop visual identities and brands for clients across various industries.</li>
+              <li>Lay out publications and editorial pieces, ensuring strong typography and visual hierarchy.</li>
+              <li>Design and code web interfaces: wireframes, prototypes, and front-end with HTML, CSS, and JavaScript.</li>
+              <li>Create original graphics, vector illustrations, and marketing materials.</li>
+              <li>Manage projects end to end: brief, proposal, production, development, and delivery.</li>
+            </ul>
+          </div>
+
+          <div class="cv-row">
+            <div class="cv-row-meta">2021 — 2024</div>
+            <h3 class="cv-row-role">Textile Designer / Community Manager</h3>
+            <p class="cv-row-company">Golden Bantán E-commerce</p>
+            <ul>
+              <li>Designed custom textile products and apparel.</li>
+              <li>Applied transfer techniques: textile vinyl, DTF, sublimation, and screen printing.</li>
+              <li>Operated heat presses and vinyl cutters.</li>
+              <li>Created visual content for social media and the online store.</li>
+              <li>Managed the community and customer service.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="cv-section">
+        <h2 class="cv-section-title">Projects</h2>
+        <div class="cv-projects">
+          <article class="cv-project">
+            <span class="cv-project-tag">Graphic & Editorial Designer · 2024</span>
+            <h4>Ciencia Vital — UACJ Magazine</h4>
+            <p>Designed the visual identity, layout, page composition, graphic elements, and social media content for the magazine.</p>
+          </article>
+          <article class="cv-project">
+            <span class="cv-project-tag">Graphic & Editorial Designer · 2024</span>
+            <h4>Meet Me Here Magazine</h4>
+            <p>Designed covers, vector illustrations, and editorial layout for a US-based independent publication.</p>
+          </article>
+           <article class="cv-project">
+            <span class="cv-project-tag">Graphic & Editorial Designer · 2025</span>
+            <h4>IMIP — Institutional book</h4>
+            <p>Collaborated on editorial design, layout, color, and file preparation for both the print and digital versions of the book for the Municipal Institute of Research and Planning (IMIP).</p>
+          </article>
+           <article class="cv-project">
+            <span class="cv-project-tag">Graphic & Editorial Designer · 2026</span>
+            <h4>Internationalization, UACJ</h4>
+            <p>Designed editorial layout, typography, and file preparation for the exchange student workbook, newsletter, fanzine, bookmarks, and notebook covers for the Internationalization Department at UACJ.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section class="cv-section">
+        <h2 class="cv-section-title">Education</h2>
+        <div>
+          <div class="cv-row">
+            <div class="cv-row-meta">2019 — 2025</div>
+            <h3 class="cv-row-role">BA in Graphic Design</h3>
+            <p class="cv-row-company">Universidad Autónoma de Ciudad Juárez (UACJ)</p>
+          </div>
+          <div class="cv-row">
+            <div class="cv-row-meta">2016 — 2019</div>
+            <h3 class="cv-row-role">Electrical Technician</h3>
+            <p class="cv-row-company">CBTIS 270</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section class="cv-section">
+        <h2 class="cv-section-title">Skills</h2>
+        <div class="cv-skills">
+          <div class="cv-skill"><h4>Branding &amp; visual identity</h4><p>Logos, brand guidelines, and marketing materials.</p></div>
+          <div class="cv-skill"><h4>Editorial design</h4><p>Layout, composition, typography, and visual hierarchy.</p></div>
+          <div class="cv-skill"><h4>UI/UX &amp; web design</h4><p>Wireframes, prototypes, and user-centered interfaces.</p></div>
+          <div class="cv-skill"><h4>Front-end development</h4><p>HTML5, CSS3, JavaScript, responsive design, and Git.</p></div>
+          <div class="cv-skill"><h4>Illustration &amp; graphics</h4><p>Vector illustration and original graphic creation.</p></div>
+          <div class="cv-skill"><h4>Photography &amp; retouching</h4><p>Composition, lighting, post-production, and color grading.</p></div>
+          <div class="cv-skill"><h4>Pre-press &amp; print</h4><p>File preparation, color management, resolution, and profiles.</p></div>
+          <div class="cv-skill"><h4>Textile printing</h4><p>Vinyl, DTF, sublimation, and screen printing.</p></div>
+        </div>
+      </section>
+
+      <!-- TOOLS -->
+      <section class="cv-section">
+        <h2 class="cv-section-title">Tools</h2>
+        <div class="cv-tags">
+          <span class="cv-tag">Illustrator</span>
+          <span class="cv-tag">Photoshop</span>
+          <span class="cv-tag">InDesign</span>
+          <span class="cv-tag">Lightroom</span>
+          <span class="cv-tag">Premiere Pro</span>
+          <span class="cv-tag">After Effects</span>
+          <span class="cv-tag">Adobe XD</span>
+          <span class="cv-tag">Affinity</span>
+          <span class="cv-tag">Blender</span>
+          <span class="cv-tag">Figma</span>
+          <span class="cv-tag">Axure</span>
+          <span class="cv-tag">Procreate</span>
+          <span class="cv-tag">Canva</span>
+          <span class="cv-tag">VS Code</span>
+          <span class="cv-tag">Android Studio</span>
+          <span class="cv-tag">Git</span>
+          <span class="cv-tag">GitHub</span>
+        </div>
+      </section>
+
+      <!-- LANGUAGES -->
+      <section class="cv-section">
+        <h2 class="cv-section-title">Languages</h2>
+        <div class="cv-langs">
+          <div class="cv-lang"><strong>Spanish</strong><span>Native</span></div>
+          <div class="cv-lang"><strong>English</strong><span>B2</span></div>
+          <div class="cv-lang"><strong>Korean</strong><span>A1.1</span></div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section class="cs-section">
+      <div class="container">
+        <div class="cs-final-cta">
+          <h2 class="cs-final-title">Let's work together.</h2>
+          <p class="cs-final-sub">Open to freelance projects, collaborations, and full-time roles.</p>
+          <div class="cs-cta-group">
+            <a href="https://wa.me/526563580671?text=Hi%20Makné,%20I'd%20like%20to%20work%20with%20you" class="cs-btn-primary" target="_blank" rel="noopener noreferrer">Get in Touch</a>
+            <a href="index.html#work" class="cs-btn-secondary">View My Work</a>
+          </div>
+          <p class="contact-email">or email <a href="mailto:makne.info@gmail.com?subject=Work%20with%20Makné">makne.info@gmail.com</a></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="cs-footer">
+    <div class="container"><p>© 2026 Makné — Design Studio</p></div>
+  </footer>
+
+  <script src="js/case-study.js"></script>
+</body>
+</html>

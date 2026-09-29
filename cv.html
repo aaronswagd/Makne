@@ -11,7 +11,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- CSS compartido con los case studies -->
   <link rel="stylesheet" href="css/case-study.css">
 
   <style>
@@ -56,13 +55,12 @@
     .cv-contact a {
       color: #0b0b0b;
       text-decoration: none;
-      border-bottom',: 1px solid transparent;
+      border-bottom: 1px solid transparent;
       transition: border-color 0.2s;
- sans-serif    }
+    }
 
-   ;
- .cv-contact a:hover      {
-      border-bottom-color: font #0b0b0b;
+    .cv-contact a:hover {
+      border-bottom-color: #0b0b0b;
     }
 
     /* BUTTONS */
@@ -78,7 +76,8 @@
       gap: 8px;
       padding: 15px 30px;
       border-radius: 40px;
-      font-family: 'Inter-weight: 600;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
       font-size: 0.95rem;
       text-decoration: none;
       cursor: pointer;
@@ -345,50 +344,87 @@
       color: #6e6e73;
     }
 
-    /* RESPONSIVE */
-   /* CTA — más aire en móvil */
-@media (max-width: 768px) {
-  .cv-page .cs-final-cta {
-    padding: 40px 8px 0;
-  }
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 860px) {
+      .cv-page { padding: 120px 0 0; }
+      .cv-section {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-bottom: 70px;
+      }
+      .cv-section-title { padding-top: 0; }
+      .cv-projects,
+      .cv-skills { grid-template-columns: 1fr; }
+      .cv-langs {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+      }
+      .cv-header { margin-bottom: 70px; }
+    }
 
-  .cv-page .cs-final-title {
-    font-size: 1.75rem;
-    line-height: 1.15;
-    padding: 0 4px;
-  }
+    /* CTA — más aire en móvil */
+    @media (max-width: 768px) {
+      .cv-page .cs-final-cta {
+        padding: 40px 8px 0;
+      }
 
-  .cv-page .cs-final-sub {
-    font-size: 1rem;
-    line-height: 1.5;
-    padding: 0 4px;
-    margin-bottom: 32px;
-  }
+      .cv-page .cs-final-title {
+        font-size: 1.75rem;
+        line-height: 1.15;
+        padding: 0 4px;
+      }
 
-  .cv-page .cs-cta-group {
-    gap: 10px;
-    padding: 0 4px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+      .cv-page .cs-final-sub {
+        font-size: 1rem;
+        line-height: 1.5;
+        padding: 0 4px;
+        margin-bottom: 32px;
+      }
 
-  .cv-page .cs-btn-primary,
-  .cv-page .cs-btn-secondary {
-    padding: 14px 24px;
-    font-size: 0.9rem;
-    width: auto;
-    flex: 0 0 auto;
-  }
+      .cv-page .cs-cta-group {
+        gap: 10px;
+        padding: 0 4px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
 
-  .cv-page .contact-email {
-    font-size: 0.9rem;
-    padding: 0 4px;
-    line-height: 1.5;
-    word-break: break-word;
-  }
-}
+      .cv-page .cs-btn-primary,
+      .cv-page .cs-btn-secondary {
+        padding: 14px 24px;
+        font-size: 0.9rem;
+        width: auto;
+        flex: 0 0 auto;
+      }
 
-    /* PRINT */
+      .cv-page .contact-email {
+        font-size: 0.9rem;
+        padding: 0 4px;
+        line-height: 1.5;
+        word-break: break-word;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .cv-page .cs-final-title {
+        font-size: 1.55rem;
+      }
+
+      .cv-page .cs-final-sub {
+        font-size: 0.95rem;
+      }
+
+      .cv-page .cs-btn-primary,
+      .cv-page .cs-btn-secondary {
+        padding: 13px 20px;
+        font-size: 0.85rem;
+      }
+
+      .cv-page .contact-email {
+        font-size: 0.85rem;
+      }
+    }
+
+    /* ===== PRINT ===== */
     @media print {
       .back-link, .cv-actions, .cs-final-cta, .cs-footer { display: none !important; }
       body { font-size: 10.5pt; }
@@ -405,71 +441,18 @@
       a { color: #000 !important; text-decoration: none; }
       .cv-section, .cv-row, .cv-project { page-break-inside: avoid; }
     }
-    
-    /* CTA — más aire en móvil */
-@media (max-width: 768px) {
-  .cv-page .cs-final-cta {
-    padding: 40px 8px 0;
-  }
-
-  .cv-page .cs-final-title {
-    font-size: 1.75rem;
-    line-height: 1.15;
-    padding: 0 4px;
-  }
-
-  .cv-page .cs-final-sub {
-    font-size: 1rem;
-    line-height: 1.5;
-    padding: 0 4px;
-    margin-bottom: 32px;
-  }
-
-  .cv-page .cs-cta-group {
-    gap: 12px;
-    padding: 0 4px;
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .cv-page .cs-btn-primary,
-  .cv-page .cs-btn-secondary {
-    width: 100%;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .cv-page .contact-email {
-    font-size: 0.9rem;
-    padding: 0 4px;
-    line-height: 1.5;
-    word-break: break-word;
-  }
-}
-
-@media (max-width: 420px) {
-  .cv-page .cs-final-title {
-    font-size: 1.55rem;
-  }
-
-  .cv-page .cs-final-sub {
-    font-size: 0.95rem;
-  }
-
-  .cv-page .contact-email {
-    font-size: 0.85rem;
-  }
-}
   </style>
 </head>
 <body>
 
-  <!-- BACK LINK — idéntico al de tus case studies -->
+  <!-- BACK LINK -->
   <a href="index.html" class="back-link">
     <span class="back-arrow">←</span> Back
   </a>
 
   <main class="cv-page">
+
+    <!-- CV CONTENT -->
     <div class="container">
 
       <!-- HEADER -->
@@ -613,15 +596,20 @@
 
     </div>
 
-    <div class="cs-final-cta">
-  <h2 class="cs-final-title">Let's work together.</h2>
-  <p class="cs-final-sub">Open to freelance projects, collaborations, and full-time roles.</p>
-  <div class="cs-cta-group">
-    <a href="https://wa.me/526563580671?text=Hi%20Jeon,%20I'd%20like%20to%20work%20with%20you" class="cs-btn-primary" target="_blank" rel="noopener noreferrer">Get in Touch</a>
-    <a href="index.html#work" class="cs-btn-secondary">View More Work</a>
-  </div>
-  <p class="contact-email">or email <a href="mailto:makne.info@gmail.com?subject=Work%20with%20Makné">makne.info@gmail.com</a></p>
-</div>
+    <!-- ===== FINAL CTA ===== -->
+    <section class="cs-section">
+      <div class="container">
+        <div class="cs-final-cta">
+          <h2 class="cs-final-title">Let's work together.</h2>
+          <p class="cs-final-sub">Open to freelance projects, collaborations, and full-time roles.</p>
+          <div class="cs-cta-group">
+            <a href="https://wa.me/526563580671?text=Hi%20Jeon,%20I'd%20like%20to%20work%20with%20you" class="cs-btn-primary" target="_blank" rel="noopener noreferrer">Get in Touch</a>
+            <a href="index.html#work" class="cs-btn-secondary">View More Work</a>
+          </div>
+          <p class="contact-email">or email <a href="mailto:makne.info@gmail.com?subject=Work%20with%20Makné">makne.info@gmail.com</a></p>
+        </div>
+      </div>
+    </section>
 
   </main>
 

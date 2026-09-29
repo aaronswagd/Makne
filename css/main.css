@@ -1519,6 +1519,11 @@ img {
   color: #fff !important;
 }
 
-.nav-cv::after {
-  display: none; 
+.nav-links a.active {
+  color: #0b0b0b;
+}
+
+.nav-links a.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }

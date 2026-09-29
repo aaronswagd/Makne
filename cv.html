@@ -2,68 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>CV | Makné — M. García</title>
+  <meta name="description" content="M. García — Graphic Designer & Front-End Developer. Branding, editorial, UI/UX, and code.">
+
+  <link rel="icon" type="image/png" href="images/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS compartido con los case studies (back-link, tipografías, reset) -->
+  <link rel="stylesheet" href="css/case-study.css">
 
   <style>
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: #ffffff;
-      color: #0b0b0b;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .container {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 0 40px;
-    }
-
-    /* ===== BACK BUTTON ===== */
-    .back-bar {
-      padding: 32px 0 0;
-    }
-
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.92rem;
-      font-weight: 500;
-      color: #6e6e73;
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    .back-link:hover {
-      color: #0b0b0b;
-    }
-
-    .back-link svg {
-      transition: transform 0.2s ease;
-    }
-
-    .back-link:hover svg {
-      transform: translateX(-3px);
-    }
-
     /* ===== CV PAGE ===== */
     .cv-page {
-      padding: 60px 0 140px;
+      padding: 140px 0 140px;
     }
 
-    /* HEADER */
     .cv-header {
       margin-bottom: 100px;
     }
@@ -81,6 +37,7 @@
     .cv-role {
       font-family: 'Inter', sans-serif;
       font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+      font-weight: 400;
       color: #6e6e73;
       margin-bottom: 32px;
       letter-spacing: -0.015em;
@@ -390,7 +347,7 @@
 
     /* RESPONSIVE */
     @media (max-width: 860px) {
-      .container { padding: 0 24px; }
+      .cv-page { padding: 120px 0 80px; }
       .cv-section {
         grid-template-columns: 1fr;
         gap: 24px;
@@ -404,12 +361,11 @@
         max-width: 100%;
       }
       .cv-header { margin-bottom: 70px; }
-      .cv-page { padding: 40px 0 80px; }
     }
 
     /* PRINT */
     @media print {
-      .back-bar, .cv-actions, .no-print { display: none !important; }
+      .back-link, .cv-actions { display: none !important; }
       body { font-size: 10.5pt; }
       .cv-page { padding: 0 !important; }
       .container { max-width: 100%; padding: 0; }
@@ -428,18 +384,10 @@
 </head>
 <body>
 
-  <!-- BACK BUTTON -->
-  <div class="back-bar">
-    <div class="container">
-      <a href="index.html" class="back-link">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="19" y1="12" x2="5" y2="12"></line>
-          <polyline points="12 19 5 12 12 5"></polyline>
-        </svg>
-        Back to home
-      </a>
-    </div>
-  </div>
+  <!-- BACK LINK — idéntico al de tus case studies -->
+  <a href="index.html" class="back-link">
+    <span class="back-arrow">←</span> Back
+  </a>
 
   <main class="cv-page">
     <div class="container">
@@ -454,7 +402,7 @@
           <a href="https://makne.co" target="_blank" rel="noopener">makne.co</a>
           <span>Ciudad Juárez, Chihuahua, Mexico</span>
         </div>
-        <div class="cv-actions no-print">
+        <div class="cv-actions">
           <a href="cv/M_Garcia_CV.pdf" download class="cv-btn cv-btn--primary">Download PDF</a>
           <button onclick="window.print()" class="cv-btn cv-btn--ghost">Print</button>
         </div>

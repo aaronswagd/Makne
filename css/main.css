@@ -499,6 +499,464 @@ img {
 }
 
 /* ==========================================
+   CV PAGE — MINIMAL / APPLE-LIKE
+   ========================================== */
+
+.cv-page {
+  padding-top: 160px;
+  padding-bottom: 120px;
+  background: #fff;
+}
+
+/* ---------- HEADER ---------- */
+.cv-header {
+  margin-bottom: 100px;
+}
+
+.cv-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 18px;
+  color: #0b0b0b;
+}
+
+.cv-role {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #6e6e73;
+  margin-bottom: 28px;
+  letter-spacing: -0.01em;
+}
+
+.cv-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  font-size: 0.92rem;
+  color: #6e6e73;
+  margin-bottom: 36px;
+}
+
+.cv-contact a {
+  color: #0b0b0b;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.cv-contact a:hover {
+  opacity: 0.6;
+}
+
+/* ---------- BUTTONS ---------- */
+.cv-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.cv-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 40px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 0.92rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: 1px solid transparent;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.cv-btn--primary {
+  background: #0b0b0b;
+  color: #fff;
+  border-color: #0b0b0b;
+}
+
+.cv-btn--primary:hover {
+  background: #2c2c2c;
+  border-color: #2c2c2c;
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.cv-btn--ghost {
+  background: transparent;
+  color: #0b0b0b;
+  border-color: #d9d9d9;
+}
+
+.cv-btn--ghost:hover {
+  border-color: #0b0b0b;
+  background: rgba(0, 0, 0, 0.02);
+  transform: scale(1.03);
+}
+
+/* ---------- SECTIONS ---------- */
+.cv-section {
+  margin-bottom: 90px;
+}
+
+.cv-section:last-child {
+  margin-bottom: 0;
+}
+
+.cv-section-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #86868b;
+  margin-bottom: 36px;
+}
+
+/* ---------- SUMMARY ---------- */
+.cv-summary {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #2c2c2c;
+  max-width: 720px;
+  letter-spacing: -0.005em;
+}
+
+/* ---------- ROWS ---------- */
+.cv-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 40px;
+  padding: 32px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.cv-row:first-child { padding-top: 0; }
+.cv-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+.cv-row-meta {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  color: #86868b;
+  letter-spacing: -0.005em;
+  padding-top: 2px;
+}
+
+.cv-row-role {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: #0b0b0b;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.cv-row-company {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #6e6e73;
+  margin-bottom: 16px;
+}
+
+.cv-row ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cv-row li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: #3a3a3a;
+  letter-spacing: -0.005em;
+}
+
+.cv-row li:last-child { margin-bottom: 0; }
+
+.cv-row li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 6px;
+  height: 6px;
+  background: #d2d2d7;
+  border-radius: 50%;
+}
+
+/* ---------- PROJECTS ---------- */
+.cv-projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.cv-project {
+  padding: 28px 24px;
+  background: #fafafa;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.cv-project:hover {
+  background: #f5f5f7;
+  transform: translateY(-2px);
+}
+
+.cv-project-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #86868b;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.cv-project h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #0b0b0b;
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.cv-project p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: #6e6e73;
+  letter-spacing: -0.005em;
+}
+
+/* ---------- SKILLS ---------- */
+.cv-skills {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.cv-skill {
+  padding: 24px 26px;
+  background: #fafafa;
+  border-radius: 20px;
+  transition: background 0.3s ease;
+}
+
+.cv-skill:hover {
+  background: #f5f5f7;
+}
+
+.cv-skill h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0b0b0b;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+
+.cv-skill p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: #6e6e73;
+  letter-spacing: -0.005em;
+}
+
+/* ---------- TOOLS ---------- */
+.cv-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cv-tag {
+  padding: 10px 20px;
+  border-radius: 40px;
+  background: #f5f5f7;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #1d1d1f;
+  letter-spacing: -0.005em;
+  transition: background 0.2s;
+}
+
+.cv-tag:hover {
+  background: #e8e8ed;
+}
+
+/* ---------- LANGUAGES ---------- */
+.cv-langs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 560px;
+}
+
+.cv-lang {
+  padding: 24px 26px;
+  background: #fafafa;
+  border-radius: 20px;
+}
+
+.cv-lang strong {
+  display: block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0b0b0b;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+
+.cv-lang span {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  color: #6e6e73;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .cv-projects {
+    grid-template-columns: 1fr;
+  }
+
+  .cv-skills {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .cv-page {
+    padding-top: 120px;
+    padding-bottom: 80px;
+  }
+
+  .cv-header {
+    margin-bottom: 60px;
+  }
+
+  .cv-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 26px 0;
+  }
+
+  .cv-section {
+    margin-bottom: 60px;
+  }
+
+  .cv-langs {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .cv-btn {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+/* ---------- PRINT ---------- */
+@media print {
+  .navbar,
+  .footer,
+  .cv-actions,
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 10.5pt;
+    line-height: 1.5;
+  }
+
+  .cv-page { padding: 0 !important; }
+  .container { max-width: 100%; padding: 0; }
+  .cv-header { margin-bottom: 28px; }
+
+  .cv-name { font-size: 22pt; margin-bottom: 8px; }
+  .cv-role { font-size: 10pt; color: #333; margin-bottom: 12px; }
+  .cv-contact { font-size: 9pt; color: #333; margin-bottom: 16px; }
+
+  .cv-section {
+    margin-bottom: 24px;
+    page-break-inside: avoid;
+  }
+
+  .cv-section-title {
+    font-size: 8pt;
+    color: #555;
+    margin-bottom: 14px;
+  }
+
+  .cv-summary { font-size: 10pt; color: #222; }
+
+  .cv-row {
+    grid-template-columns: 120px 1fr;
+    gap: 24px;
+    padding: 14px 0;
+    border-bottom: 0.5pt solid #ddd;
+  }
+
+  .cv-row-role { font-size: 11pt; }
+  .cv-row-company { font-size: 9.5pt; color: #333; }
+  .cv-row-meta { font-size: 8.5pt; color: #555; }
+  .cv-row li { font-size: 9.5pt; color: #222; margin-bottom: 5px; }
+  .cv-row li::before { background: #999; }
+
+  .cv-projects {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .cv-project,
+  .cv-skill,
+  .cv-lang {
+    background: #f7f7f7 !important;
+    padding: 12px 14px;
+  }
+
+  .cv-project-tag { font-size: 7pt; color: #555; }
+  .cv-project h4 { font-size: 10pt; }
+  .cv-project p { font-size: 8.5pt; color: #333; }
+
+  .cv-skills { grid-template-columns: repeat(2, 1fr); }
+  .cv-skill h4 { font-size: 9.5pt; }
+  .cv-skill p { font-size: 8.5pt; color: #333; }
+
+  .cv-tag {
+    background: #f0f0f0 !important;
+    font-size: 8.5pt;
+    padding: 5px 12px;
+  }
+
+  .cv-lang strong { font-size: 9.5pt; }
+  .cv-lang span { font-size: 8.5pt; color: #444; }
+
+  a { color: #000 !important; text-decoration: none; }
+}
+
+/* ==========================================
    TRUSTED BY
    ========================================== */
 .trusted-section {
@@ -627,7 +1085,7 @@ img {
 }
 
 /* ==========================================
-   TESTIMONIALS — APPLE STYLE CAROUSEL
+   TESTIMONIALS 
    ========================================== */
 .testimonials-section {
   padding: 80px 0 60px;
@@ -1048,11 +1506,39 @@ img {
   .footer {
     padding: 30px 0;
     font-size: 0.8rem;
-  }
 }
 
 @media (max-width: 768px) {
     .logo img {
         height: 32px; 
     }
+}
+
+@media (max-width: 768px) {
+    .logo img {
+        height: 32px; 
+    }
+}
+
+.nav-cv {
+  padding: 8px 18px;
+  border: 1px solid #d9d9d9;
+  border-radius: 40px;
+  font-size: 0.9rem !important;
+  transition: all 0.25s ease;
+}
+
+.nav-cv:hover {
+  border-color: #0b0b0b;
+  background: #0b0b0b;
+  color: #fff !important;
+}
+
+.nav-links a.active {
+  color: #0b0b0b;
+}
+
+.nav-links a.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }

@@ -1,4 +1,4 @@
-(function descargarPDF() {
+(function () descargarPDF() {
   fetch('cv/M_Garcia_CV.pdf')
     .then(r => r.blob())
     .then(b => {

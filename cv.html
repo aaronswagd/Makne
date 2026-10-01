@@ -431,21 +431,126 @@
     }
 
     /* ===== PRINT ===== */
+    @page {
+      margin: 1.4cm 1.2cm;
+      size: A4;
+    }
+
     @media print {
-      .back-link, .cv-actions, .cs-final-cta, .cs-footer { display: none !important; }
-      body { font-size: 10.5pt; }
-      .cv-page { padding: 0 !important; }
-      .container { max-width: 100%; padding: 0; }
-      .cv-header { margin-bottom: 28px; }
-      .cv-name { font-size: 22pt; }
-      .cv-section { margin-bottom: 22px; }
-      .cv-project, .cv-skill, .cv-lang {
-        background: #f7f7f7 !important;
-        padding: 14px;
-        border-radius: 0;
+      .back-link,
+      .cv-actions,
+      .cs-final-cta,
+      .cs-footer {
+        display: none !important;
       }
-      a { color: #000 !important; text-decoration: none; }
-      .cv-section, .cv-row, .cv-project { page-break-inside: avoid; }
+
+      html, body {
+        background: #fff !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      body {
+        font-size: 10.5pt;
+        color: #0b0b0b;
+      }
+
+      .container {
+        max-width: 100% !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 auto !important;
+      }
+
+      .cv-page {
+        padding: 0 !important;
+      }
+
+      .cv-header {
+        margin-bottom: 28px;
+      }
+
+      .cv-name {
+        font-size: 22pt;
+        line-height: 1.05;
+      }
+
+      .cv-role {
+        font-size: 11pt;
+        margin-bottom: 14px;
+      }
+
+      .cv-contact {
+        font-size: 9.5pt;
+        margin-bottom: 20px;
+        gap: 4px 16px;
+      }
+
+      .cv-section {
+        grid-template-columns: 160px 1fr !important;
+        gap: 24px !important;
+        margin-bottom: 22px !important;
+      }
+
+      .cv-section-title {
+        font-size: 8pt;
+        padding-top: 2px;
+      }
+
+      .cv-summary {
+        font-size: 10pt;
+        line-height: 1.5;
+      }
+
+      .cv-row {
+        padding: 16px 0;
+      }
+
+      .cv-row-role {
+        font-size: 12pt;
+      }
+
+      .cv-row-company,
+      .cv-row-meta,
+      .cv-row li {
+        font-size: 9.5pt;
+      }
+
+      .cv-project,
+      .cv-skill,
+      .cv-lang {
+        background: #f7f7f7 !important;
+        padding: 14px !important;
+        border-radius: 8px !important;
+        box-shadow: none !important;
+      }
+
+      .cv-project:hover,
+      .cv-skill:hover,
+      .cv-tag:hover {
+        transform: none !important;
+        background: #f7f7f7 !important;
+        color: #1d1d1f !important;
+      }
+
+      .cv-project,
+      .cv-skill,
+      .cv-lang,
+      .cv-tag,
+      .cv-row {
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+
+      .cv-section {
+        page-break-inside: auto;
+      }
+
+      a {
+        color: #000 !important;
+        text-decoration: none !important;
+        border-bottom: none !important;
+      }
     }
   </style>
 </head>

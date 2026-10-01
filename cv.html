@@ -6,6 +6,11 @@
   <title>CV | Makné — M. García</title>
   <meta name="description" content="M. García — Graphic Designer & Front-End Developer. Branding, editorial, UI/UX, and code.">
 
+  <!-- hreflang: relación entre versiones de idioma -->
+  <link rel="alternate" hreflang="en" href="https://aaronswagd.github.io/makne/cv.html" />
+  <link rel="alternate" hreflang="es" href="https://aaronswagd.github.io/makne/cv-es.html" />
+  <link rel="alternate" hreflang="x-default" href="https://aaronswagd.github.io/makne/cv.html" />
+
   <link rel="icon" type="image/png" href="images/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,13 +58,14 @@
     }
 
     .cv-contact a {
-      color: #0b0b0b;
+      color: #6e6e73;
       text-decoration: none;
       border-bottom: 1px solid transparent;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, color 0.2s;
     }
 
     .cv-contact a:hover {
+      color: #0b0b0b;
       border-bottom-color: #0b0b0b;
     }
 
@@ -460,9 +466,10 @@
         <h1 class="cv-name">M. García</h1>
         <p class="cv-role">Graphic Designer &amp; Front-End Developer</p>
         <div class="cv-contact">
-          <span>(+52) 656-358-06-71</span>
-          <span> makne.info@gmail.com</span>
+          <a href="https://wa.me/526563580671?text=Hi%20Makné,%20I'd%20like%20to%20contact%20you" target="_blank" rel="noopener noreferrer" aria-label="Message me on WhatsApp">(+52) 656-358-06-71</a>
+          <a href="mailto:makne.info@gmail.com" aria-label="Send me an email">makne.info@gmail.com</a>
           <span>Ciudad Juárez, Chihuahua, México</span>
+          <span><a href="cv-es.html">Ver en Español</a></span>
         </div>
         <div class="cv-actions">
           <a href="cv/M_Garcia_CV.pdf" download class="cv-btn cv-btn--primary">Download PDF</a>

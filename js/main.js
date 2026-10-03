@@ -167,10 +167,7 @@
       var lang = el.getAttribute('data-lang-switch');
       try {
         localStorage.setItem('makne-lang', lang);
-      } catch (err) {
-        /* silencioso */
-      }
-      // El href del enlace ya navega al idioma correcto.
+      } catch (err) { /* silencioso */ }
     });
   });
 })();

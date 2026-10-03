@@ -270,19 +270,56 @@ img {
     transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
   }
 
-  .lang-toggle::after,
-  .lang-toggle::before {
-    content: none !important;
-    display: none !important;
-  }
+  .lang-toggle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  background: transparent;
+  border: 1px solid currentColor;
+  border-radius: 40px;
+  padding: 6px 14px;
+  cursor: pointer;
+  color: inherit;
+  line-height: 1;
+  margin-left: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
 
-  .lang-toggle:hover,
-  .lang-toggle:focus-visible {
-    background: #0b0b0b;
-    color: #fff;
-    border-color: #0b0b0b;
-    text-decoration: none !important;
-  }
+/* Mata el subrayado en todos los estados, con alta especificidad */
+.nav-links a.lang-toggle,
+.nav-links a.lang-toggle:link,
+.nav-links a.lang-toggle:visited,
+.nav-links a.lang-toggle:hover,
+.nav-links a.lang-toggle:focus,
+.nav-links a.lang-toggle:focus-visible,
+.nav-links a.lang-toggle:active {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+
+/* Elimina por completo el pseudo-elemento que hace la rayita */
+.nav-links a.lang-toggle::after,
+.nav-links a.lang-toggle::before {
+  content: none !important;
+  display: none !important;
+  background: transparent !important;
+  height: 0 !important;
+  width: 0 !important;
+  transform: none !important;
+}
+
+/* Hover: relleno negro + texto blanco */
+.lang-toggle:hover,
+.lang-toggle:focus-visible {
+  background: #0b0b0b !important;
+  color: #ffffff !important;
+  border-color: #0b0b0b !important;
+  text-decoration: none !important;
+}
 
 /* ==========================================
    HERO VISUAL
@@ -1545,6 +1582,7 @@ img {
   .footer {
     padding: 30px 0;
     font-size: 0.8rem;
+  }
 }
 
 @media (max-width: 768px) {

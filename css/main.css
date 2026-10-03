@@ -245,60 +245,79 @@ img {
   transform: scale(1.03);
 }
 
-.lang-toggle,
-  .lang-toggle:link,
-  .lang-toggle:visited,
-  .lang-toggle:hover,
-  .lang-toggle:focus,
-  .lang-toggle:active {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    background: transparent;
-    border: 1px solid currentColor;
-    border-radius: 40px;
-    padding: 6px 14px;
-    cursor: pointer;
-    color: inherit;
-    line-height: 1;
-    text-decoration: none !important;
-    margin-left: 8px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-  }
-
-  .lang-toggle {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  background: transparent;
-  border: 1px solid currentColor;
-  border-radius: 40px;
-  padding: 6px 14px;
-  cursor: pointer;
-  color: inherit;
-  line-height: 1;
-  margin-left: 8px;
+.lang-toggle {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  min-width: 58px;
+  height: 34px;
+  padding: 0 16px;
+  border: 1px solid #0b0b0b;
+  border-radius: 999px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  color: #0b0b0b;
+  background: transparent;
+  text-decoration: none !important;
+  cursor: pointer;
+  margin-left: 8px;
+  box-sizing: border-box;
+  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 
-/* Mata el subrayado en todos los estados, con alta especificidad */
+/* Mata la rayita que viene de .nav-links a::after */
+.nav-links a.lang-toggle::after,
+.nav-links a.lang-toggle::before {
+  content: none !important;
+  display: none !important;
+}
+
 .nav-links a.lang-toggle,
 .nav-links a.lang-toggle:link,
 .nav-links a.lang-toggle:visited,
-.nav-links a.lang-toggle:hover,
 .nav-links a.lang-toggle:focus,
-.nav-links a.lang-toggle:focus-visible,
 .nav-links a.lang-toggle:active {
   text-decoration: none !important;
-  border-bottom: none !important;
+  border-bottom: 1px solid #0b0b0b !important;
+}
+
+/* Los dos textos, superpuestos y centrados */
+.lang-toggle__default,
+.lang-toggle__hover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s ease;
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.lang-toggle__hover {
+  opacity: 0;
+}
+
+/* Hover / focus: relleno negro, texto blanco y cambio de texto */
+.lang-toggle:hover,
+.lang-toggle:focus-visible {
+  background: #0b0b0b;
+  color: #ffffff;
+  border-color: #0b0b0b;
+}
+
+.lang-toggle:hover .lang-toggle__default,
+.lang-toggle:focus-visible .lang-toggle__default {
+  opacity: 0;
+}
+
+.lang-toggle:hover .lang-toggle__hover,
+.lang-toggle:focus-visible .lang-toggle__hover {
+  opacity: 1;
 }
 
 /* Elimina por completo el pseudo-elemento que hace la rayita */

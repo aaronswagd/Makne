@@ -67,6 +67,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .logo {
@@ -590,7 +591,9 @@ img {
   background: #fff;
 }
 
-.cv-header { margin-bottom: 100px; }
+.cv-header {
+  margin-bottom: 100px;
+}
 
 .cv-name {
   font-family: 'Space Grotesk', sans-serif;
@@ -626,7 +629,9 @@ img {
   transition: opacity 0.2s;
 }
 
-.cv-contact a:hover { opacity: 0.6; }
+.cv-contact a:hover {
+  opacity: 0.6;
+}
 
 .cv-actions {
   display: flex;
@@ -676,8 +681,13 @@ img {
   transform: scale(1.03);
 }
 
-.cv-section { margin-bottom: 90px; }
-.cv-section:last-child { margin-bottom: 0; }
+.cv-section {
+  margin-bottom: 90px;
+}
+
+.cv-section:last-child {
+  margin-bottom: 0;
+}
 
 .cv-section-title {
   font-family: 'Inter', sans-serif;
@@ -735,7 +745,11 @@ img {
   margin-bottom: 16px;
 }
 
-.cv-row ul { list-style: none; padding: 0; margin: 0; }
+.cv-row ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
 .cv-row li {
   position: relative;
@@ -820,7 +834,9 @@ img {
   transition: background 0.3s ease;
 }
 
-.cv-skill:hover { background: #f5f5f7; }
+.cv-skill:hover {
+  background: #f5f5f7;
+}
 
 .cv-skill h4 {
   font-family: 'Space Grotesk', sans-serif;
@@ -857,7 +873,9 @@ img {
   transition: background 0.2s;
 }
 
-.cv-tag:hover { background: #e8e8ed; }
+.cv-tag:hover {
+  background: #e8e8ed;
+}
 
 .cv-langs {
   display: grid;
@@ -921,7 +939,9 @@ img {
   cursor: default;
 }
 
-.trusted-logo-item:hover { opacity: 0.7; }
+.trusted-logo-item:hover {
+  opacity: 0.7;
+}
 
 .trusted-logo-text {
   font-family: 'Space Grotesk', sans-serif;
@@ -956,7 +976,10 @@ img {
   border-color: #e0e0e0;
 }
 
-.service-card h3 { font-size: 1.4rem; margin-bottom: 8px; }
+.service-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
 
 /* ==========================================
    ABOUT
@@ -974,7 +997,10 @@ img {
   line-height: 1.6;
 }
 
-.about-image-wrapper { display: flex; justify-content: center; }
+.about-image-wrapper {
+  display: flex;
+  justify-content: center;
+}
 
 .about-image {
   width: 100%;
@@ -1003,13 +1029,21 @@ img {
   padding-top: 15px;
 }
 
-.step-number { font-weight: 700; font-size: 1.3rem; }
+.step-number {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
 
 /* ==========================================
    TESTIMONIALS
    ========================================== */
-.testimonials-section { padding: 80px 0 60px; }
-.testimonials-section .section-sub { margin-bottom: 40px; }
+.testimonials-section {
+  padding: 80px 0 60px;
+}
+
+.testimonials-section .section-sub {
+  margin-bottom: 40px;
+}
 
 .testimonials-wrapper {
   position: relative;
@@ -1030,7 +1064,9 @@ img {
   padding: 8px 0;
 }
 
-.testimonials-track::-webkit-scrollbar { display: none; }
+.testimonials-track::-webkit-scrollbar {
+  display: none;
+}
 
 .testimonial-card {
   flex: 0 0 380px;
@@ -1092,8 +1128,14 @@ img {
 /* ==========================================
    MORE WORK — AUTO CAROUSEL
    ========================================== */
-.more-work-section { padding: 100px 0 60px; overflow: hidden; }
-.more-work-section .section-sub { margin-bottom: 50px; }
+.more-work-section {
+  padding: 100px 0 60px;
+  overflow: hidden;
+}
+
+.more-work-section .section-sub {
+  margin-bottom: 50px;
+}
 
 .carousel-wrapper {
   width: 100%;
@@ -1109,7 +1151,9 @@ img {
   animation: autoScroll 30s linear infinite;
 }
 
-.carousel-track:hover { animation-play-state: paused; }
+.carousel-track:hover {
+  animation-play-state: paused;
+}
 
 .carousel-item {
   flex: 0 0 380px;
@@ -1162,7 +1206,9 @@ img {
   transition: color 0.2s ease;
 }
 
-.contact-email a:hover { color: #ffffff; }
+.contact-email a:hover {
+  color: #ffffff;
+}
 
 /* ==========================================
    FOOTER
@@ -1228,27 +1274,43 @@ img {
     order: 2;
   }
 
-  .project-description { max-width: 100%; }
+  .project-description {
+    max-width: 100%;
+  }
 
   .project-info-full {
     text-align: left;
     margin: 0;
   }
 
-  .project-info-full .project-description { margin-left: 0; }
+  .project-info-full .project-description {
+    margin-left: 0;
+  }
 
-  .supporting-visuals { grid-template-columns: repeat(2, 1fr); }
+  .supporting-visuals {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-  .testimonial-arrow { display: none; }
-  .testimonials-wrapper { max-width: 100%; }
+  .testimonial-arrow {
+    display: none;
+  }
+
+  .testimonials-wrapper {
+    max-width: 100%;
+  }
 }
 
 /* ==========================================
-   RESPONSIVE — CV EN MÓVIL (solo CV)
+   RESPONSIVE — CV EN TABLET/MÓVIL
    ========================================== */
 @media (max-width: 900px) {
-  .cv-projects { grid-template-columns: 1fr; }
-  .cv-skills { grid-template-columns: 1fr; }
+  .cv-projects {
+    grid-template-columns: 1fr;
+  }
+
+  .cv-skills {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ==========================================
@@ -1268,15 +1330,34 @@ img {
   }
 
   .nav-inner {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 14px;
     flex-wrap: nowrap;
+    padding-top: 6px;
   }
 
-  .logo img { height: 32px; }
+  .logo img {
+    height: 32px;
+    margin: 0 auto;
+  }
 
+  /* El botón sale del flujo y se ancla arriba a la derecha */
+  .lang-toggle {
+    position: absolute !important;
+    top: 0;
+    right: 0;
+    margin-left: 0 !important;
+    min-width: 48px;
+    height: 30px;
+    padding: 0 12px;
+    font-size: 0.72rem;
+    z-index: 2;
+  }
+
+  /* Links en una sola fila con scroll horizontal si no caben */
   .nav-links {
     display: flex;
     align-items: center;
@@ -1284,7 +1365,7 @@ img {
     gap: 16px;
     flex-wrap: nowrap;
     width: 100%;
-    padding: 4px 2px 6px;
+    padding: 4px 0 6px;
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
@@ -1300,19 +1381,9 @@ img {
     flex-shrink: 0;
   }
 
-  /* Botón de idioma compacto en móvil */
-  .lang-toggle {
-    min-width: 48px;
-    height: 30px;
-    padding: 0 12px;
-    font-size: 0.72rem;
-    margin-left: 2px;
-    flex-shrink: 0;
-  }
-
   /* --- HERO móvil --- */
   .hero {
-    padding-top: 170px;
+    padding-top: 150px;
     min-height: auto;
   }
 
@@ -1417,7 +1488,7 @@ img {
 
   /* --- CV móvil --- */
   .cv-page {
-    padding-top: 170px;
+    padding-top: 150px;
     padding-bottom: 80px;
   }
 
@@ -1452,7 +1523,7 @@ img {
    RESPONSIVE — MÓVIL PEQUEÑO (iPhone SE)
    ========================================== */
 @media (max-width: 400px) {
-  .hero { padding-top: 165px; }
+  .hero { padding-top: 145px; }
 
   .hero-title { font-size: clamp(1.9rem, 10vw, 2.4rem); }
   .hero-sub { font-size: 0.95rem; }
@@ -1569,7 +1640,9 @@ img {
   color: #fff !important;
 }
 
-.nav-links a.active { color: #0b0b0b; }
+.nav-links a.active {
+  color: #0b0b0b;
+}
 
 .nav-links a.active::after {
   transform: scaleX(1);

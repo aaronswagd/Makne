@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="visibility:hidden">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="description" content="Elite freelance graphic designer crafting premium visuals for ambitious brands. Minimalism that sells.">
   <title>Makné | Graphic Designer</title>
+
+  <!-- Detección de idioma -->
+  <script src="js/lang-detect.js"></script>
+  <script>
+    setTimeout(function () {
+      document.documentElement.style.visibility = '';
+    }, 600);
+  </script>
+  <noscript><style>html{visibility:visible !important}</style></noscript>
+
+  <!-- hreflang -->
+  <link rel="alternate" hreflang="en" href="https://aaronswagd.github.io/makne/" />
+  <link rel="alternate" hreflang="es" href="https://aaronswagd.github.io/makne/es/" />
+  <link rel="alternate" hreflang="x-default" href="https://aaronswagd.github.io/makne/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -27,6 +41,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/main.css">
+
+  <style>
+    .lang-toggle {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      background: transparent;
+      border: 1px solid currentColor;
+      border-radius: 40px;
+      padding: 6px 14px;
+      cursor: pointer;
+      color: inherit;
+      line-height: 1;
+      transition: opacity 0.2s ease;
+      margin-left: 8px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+    }
+    .lang-toggle:hover { opacity: 0.7; }
+  </style>
 </head>
 <body>
 
@@ -42,6 +78,7 @@
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
         <a href="cv.html">CV</a>
+        <a href="es/" class="lang-toggle" data-lang-switch="es" aria-label="Cambiar a español">ES</a>
       </div>
     </div>
   </nav>
@@ -56,7 +93,7 @@
           <p class="hero-sub">Design with intention — Made to connect.</p>
           <div class="cta-group">
             <a href="#work" class="btn-primary">View Work</a>
-            <a href="https://wa.me/526563580671?text=Hi%20Jeon,%20I'm%20interested%20in%20a%20design%20project" target="_blank" rel="noopener noreferrer" class="btn-secondary">Let's Talk</a>
+            <a href="https://wa.me/526563580671?text=Hi%20Makné,%20I'm%20interested%20in%20a%20design%20project" target="_blank" rel="noopener noreferrer" class="btn-secondary">Let's Talk</a>
           </div>
         </div>
         <div class="hero-visual">
@@ -68,14 +105,13 @@
     <!-- ========== SELECTED WORK ========== -->
     <section id="work" class="portfolio-section">
       <div class="container">
-
         <div class="portfolio-header">
           <span class="portfolio-label">Portfolio</span>
           <h2 class="section-title">Selected work</h2>
           <p class="section-sub">Each project is a strategic blend of minimalism and impact — crafted to elevate brands and drive desire.</p>
         </div>
 
-        <!-- ===== PROJECT 01: GERO Arquitectos ===== -->
+        <!-- PROJECT 01: GERO -->
         <div class="project-card reveal">
           <div class="project-layout project-layout--image-left">
             <div class="project-hero-image">
@@ -84,9 +120,7 @@
             <div class="project-info">
               <span class="project-category">Brand Positioning · Visual Identity</span>
               <h3 class="project-title">GERO Arquitectos</h3>
-              <p class="project-description">
-                Brand identity for a Juárez-based architecture studio. A visual system that blends professional rigor with the warmth of Mexican craftsmanship.
-              </p>
+              <p class="project-description">Brand identity for a Juárez-based architecture studio. A visual system that blends professional rigor with the warmth of Mexican craftsmanship.</p>
               <a href="case-study-gero.html" class="project-link">View case study →</a>
             </div>
           </div>
@@ -97,25 +131,22 @@
           </div>
         </div>
 
-        <!-- ===== PROJECT 02: IMIP ===== -->
+        <!-- PROJECT 02: IMIP -->
         <div class="project-card reveal">
           <div class="project-layout project-layout--image-right">
             <div class="project-info">
               <span class="project-category">Editorial · Data Visualization</span>
               <h3 class="project-title">IMIP</h3>
-              <p class="project-description">
-                Complete color system, interior layout, and data graphics for the official 2024 municipal planning report. Published with name credit.
-              </p>
+              <p class="project-description">Complete color system, interior layout, and data graphics for the official 2024 municipal planning report. Published with name credit.</p>
               <a href="case-study-imip.html" class="project-link">View case study →</a>
             </div>
             <div class="project-hero-image">
               <img src="img/imip-hero.jpg" alt="IMIP editorial design" loading="lazy">
             </div>
           </div>
-          </div>
-         
+        </div>
 
-        <!-- ===== PROJECT 03: Meet Me Here Magazine ===== -->
+        <!-- PROJECT 03: Meet Me Here -->
         <div class="project-card project-card--full reveal">
           <div class="project-layout-full">
             <div class="project-hero-full">
@@ -124,9 +155,7 @@
             <div class="project-info-full">
               <span class="project-category">Magazine · Art Direction</span>
               <h3 class="project-title">Meet Me Here</h3>
-              <p class="project-description">
-                Magazine layout and art direction for a US-based independent publication. Typography, photography, and narrative in perfect balance.
-              </p>
+              <p class="project-description">Magazine layout and art direction for a US-based independent publication. Typography, photography, and narrative in perfect balance.</p>
               <a href="case-study-meetmehere.html" class="project-link">View case study →</a>
             </div>
           </div>
@@ -134,7 +163,7 @@
       </div>
     </section>
 
-    <!-- ========== TRUSTED BY ========== -->
+    <!-- ========== TRUSTED ========== -->
     <section class="trusted-section">
       <div class="container">
         <p class="trusted-label">Trusted by forward-thinking brands</p>
@@ -252,9 +281,7 @@
         <div class="final-cta">
           <h2>Your brand deserves to look as valuable as it is.</h2>
           <a href="https://wa.me/526563580671?text=Hi%20Makné,%20I'm%20interested%20in%20a%20design%20project" class="btn-cta" target="_blank" rel="noopener noreferrer">Start a Project</a>
-          <p class="contact-email">
-            or email <a href="mailto:makne.info@gmail.com?subject=Design%20Project%20Inquiry">makne.info@gmail.com</a>
-          </p>
+          <p class="contact-email">or email <a href="mailto:makne.info@gmail.com?subject=Design%20Project%20Inquiry">makne.info@gmail.com</a></p>
         </div>
       </div>
     </section>
@@ -262,7 +289,7 @@
 
   <footer class="footer">
     <div class="container">
-      <p>© <span id="year"></span> Makné — Design Studio
+      <p>© <span id="year"></span> Makné — Design Studio</p>
     </div>
   </footer>
 

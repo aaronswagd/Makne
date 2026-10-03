@@ -155,3 +155,22 @@
     init();
   }
 })();
+
+/* ============================================================
+   Language switch — guarda la preferencia EN/ES
+   ============================================================ */
+(function () {
+  'use strict';
+
+  document.querySelectorAll('[data-lang-switch]').forEach(function (el) {
+    el.addEventListener('click', function () {
+      var lang = el.getAttribute('data-lang-switch');
+      try {
+        localStorage.setItem('makne-lang', lang);
+      } catch (err) {
+        /* silencioso */
+      }
+      // El href del enlace ya navega al idioma correcto.
+    });
+  });
+})();

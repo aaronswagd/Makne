@@ -3,7 +3,6 @@
    Detecta el idioma del navegador y redirige a /es/ o /
    Debe cargarse en el <head> para evitar parpadeo.
    ============================================================ */
-
 (function () {
   'use strict';
 
@@ -12,17 +11,12 @@
   }
 
   try {
-    // En local con doble clic (file://) no redirigimos.
-    if (location.protocol === 'file:') {
-      reveal();
-      return;
-    }
+    if (location.protocol === 'file:') { reveal(); return; }
 
     var pref = localStorage.getItem('makne-lang');
     var path = location.pathname;
     var inEs = /\/es(\/|$)/.test(path);
 
-    // Nombre del archivo actual (index.html, cv.html…)
     var filename = 'index.html';
     var lastSlash = path.lastIndexOf('/');
     if (lastSlash >= 0) {
@@ -30,11 +24,9 @@
       if (last && last !== 'es') filename = last;
     }
 
-    // Idioma del navegador
     var nav = (navigator.language || (navigator.languages && navigator.languages[0]) || 'en').toLowerCase();
     var isEs = nav.indexOf('es') === 0;
 
-    // Base relativa (funciona en GitHub Pages y en servidor local)
     var base = inEs
       ? path.replace(/\/es\/[^\/]*$/, '/')
       : path.replace(/\/[^\/]*$/, '/');
@@ -54,9 +46,7 @@
       location.replace(target);
       return;
     }
-  } catch (e) {
-    /* silencioso */
-  }
+  } catch (e) { /* silencioso */ }
 
   reveal();
 })();
